@@ -11,15 +11,13 @@ import Page from "./collections/page";
 import Blogs from "./collections/blogs";
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
 const branch =
-  process.env.GITHUB_BRANCH ||
-  process.env.VERCEL_GIT_COMMIT_REF ||
+  process.env.NEXT_PUBLIC_TINA_BRANCH ||
+  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
   process.env.HEAD ||
   "main";
 const config = defineConfig({
-  contentApiUrlOverride: "/api/tina/gql",
-  authProvider: isLocal
-    ? new LocalAuthProvider()
-    : new UsernamePasswordAuthJSProvider(),
+  token: process.env.TINA_TOKEN,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   client: {
     referenceDepth: 1,
   },
@@ -33,9 +31,13 @@ const config = defineConfig({
     publicFolder: "public",
   },
   media: {
-    loadCustomStore: async () => {
-      const pack = await import("next-tinacms-s3");
-      return pack.TinaCloudS3MediaStore;
+    // loadCustomStore: async () => {
+    //   const pack = await import("next-tinacms-s3");
+    //   return pack.TinaCloudS3MediaStore;
+    // },
+    tina: {
+      publicFolder: "public",
+      mediaRoot: "uploads",
     },
   },
 
