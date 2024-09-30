@@ -27,7 +27,7 @@ const config = defineConfig({
     mediaRoot: "uploads",
   },
   build: {
-    outputFolder: "admin",
+    outputFolder: "public/admin",
     publicFolder: "public",
   },
   media: {
