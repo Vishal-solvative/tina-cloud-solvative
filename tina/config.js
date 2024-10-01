@@ -1,8 +1,4 @@
-import {
-    UsernamePasswordAuthJSProvider as UsernamePasswordAuthJSProvider,
-    TinaUserCollection as TinaUserCollection
-} from 'tinacms-authjs/dist/tinacms'
-import {defineConfig as defineConfig, LocalAuthProvider as LocalAuthProvider} from 'tinacms'
+import {defineConfig} from 'tinacms'
 import Global from './collections/global'
 import Page from './collections/page'
 import Blogs from './collections/blogs'
