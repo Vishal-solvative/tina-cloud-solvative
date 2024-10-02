@@ -19,13 +19,13 @@ const Footer = ({ footer }) => {
                     data-tina-field={tinaField(footer, "logo")}
                     onClick={() => updateActivePage("/")}
                   >
-                    {/* <img alt="Agon" src="/assets/imgs/template/logo.svg" /> */}
-                    <Image
+                    {footer?.logo && <img alt="Agon" src={footer?.logo} />}
+                    {/* <Image
                       src={footer?.logo}
                       alt="Agon"
                       width={162}
                       height={42}
-                    />
+                    /> */}
                   </a>
                 </Link>
               </div>
