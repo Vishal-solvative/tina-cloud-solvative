@@ -1,10 +1,15 @@
-import { fetchPages, fetchBlogPages } from "../util/pagesData";
+import {
+  fetchPages,
+  fetchBlogPages,
+  FETCH_PAGES,
+  FETCH_BLOGS,
+} from "../util/pagesData";
 export const runtime = "edge";
 
 export default async function robots() {
   const baseUrl = "https://solvative.com";
-  const pageData = await fetchPages();
-  const blogsData = await fetchBlogPages();
+  const pageData = await FETCH_PAGES();
+  const blogsData = await FETCH_BLOGS();
 
   const transformedPageData = pageData.map((item) => `/${item.filename}`);
   const transformedBlogData = blogsData.map(
@@ -12,17 +17,17 @@ export default async function robots() {
   );
 
   return {
-    rules: {
-      userAgent: "*",
-      allow: [
-        "/",
-        "/blogs",
-        "facebookexternalhit",
-        ...transformedPageData,
-        ...transformedBlogData,
-      ],
-      disallow: "/admin",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: ["/", "/blogs", ...transformedPageData, ...transformedBlogData],
+        disallow: "/admin",
+      },
+      {
+        userAgent: "facebookexternalhit",
+        allow: "/", // Ensure Facebook can crawl everything
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
