@@ -37,6 +37,8 @@ export default async function RootLayout({ children }) {
     <meta name="twitter:description" content="One of America’s Largest Private Companies challenged us to migrate them from an aging and traditional CMS to the new-age Salesforce Commerce Cloud to unlock powerful features. We Solved It." />
     <meta name="twitter:site" content="@solvative" />
     <meta name="twitter:label1" content="Est. reading time" />
+    <meta name="twitter:image" content="https://solvative.com/wp-content/uploads/2020/06/solvative-preview.png"/>
+
       </head>
 
       <body>
