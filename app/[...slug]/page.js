@@ -5,7 +5,7 @@ import ClientPage from "./client-page";
 export const runtime = "edge";
 
 // Fetch the data for the page, including SEO fields
-async function fetchData(slug) {
+const fetchData = async (slug) => {
   try {
     if (
       slug == "vite.svg.mdx" ||
@@ -32,12 +32,14 @@ async function fetchData(slug) {
   } catch (error) {
     return { notFound: true };
   }
-}
+};
 
 // Generate the metadata for the page
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }, parent) {
   const { slug } = params;
   const result = await fetchData(slug);
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
 
   if (result?.notFound) {
     return {
@@ -56,7 +58,7 @@ export async function generateMetadata({ params }) {
     const seoFields = result?.props?.seoFields;
 
     return {
-      title: seoFields?.metaTitle,
+      title: seoFields?.metaTitle || "default title",
       description: seoFields?.metaDescription,
       openGraph: {
         title: seoFields?.ogTitle || seoFields?.metaTitle,
@@ -72,6 +74,7 @@ export async function generateMetadata({ params }) {
                 height: seoFields?.ogImageHeight || 600,
                 type: seoFields?.ogImageType,
               },
+              ...previousImages,
             ]
           : [],
       },
