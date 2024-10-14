@@ -1,22 +1,13 @@
-import TinaComp from "../../components/TinaComp";
-import { client } from "../../tina/__generated__/client";
-
-export const runtime = "edge";
-
+import TinaComp from '../../components/TinaComp'
+import {client} from '../../tina/__generated__/client'
+export const runtime = 'edge'
 
 const NotFound = async () => {
-  
-  const res = await client.queries.page({
-    relativePath: `pageNotFound.mdx`,
-  });
+    const res = await client.queries.page({
+        relativePath: `pageNotFound.mdx`
+    })
 
-  return (
-    <TinaComp
-      data={JSON.parse(JSON.stringify(res.data))}
-      query={res.query}
-      variables={res.variables}
-    />
-  );
-};
+    return <TinaComp data={JSON.parse(JSON.stringify(res.data))} query={res.query} variables={res.variables} />
+}
 
-export default NotFound;
+export default NotFound

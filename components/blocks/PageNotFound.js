@@ -40,7 +40,7 @@ export const PageNotFound = ({data}) => {
                     </div>
                     <div className='col-12 col-md-6 d-flex justify-content-center align-items-center mt-30 mt-md-0'>
                         <Image
-                            src={data?.errorImage}
+                            src={required('/public/assets/imags/template/robot.gif')}
                             alt='Robot'
                             data-tina-field={tinaField(data, 'errorImage')}
                             width={500}
