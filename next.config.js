@@ -21,6 +21,12 @@ module.exports = {
     ];
   },
   images: {
-    domains: ['solvative-for-real-bucket.s3.us-east-1.amazonaws.com'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "solvative-for-real-bucket.s3.us-east-1.amazonaws.com",
+        pathname: "/**", // Allow all paths
+      },
+    ],
   },
 };
