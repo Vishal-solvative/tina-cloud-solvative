@@ -83,7 +83,7 @@ export async function generateMetadata({ params }, parent) {
               ...previousImages,
             ]
           : [
-              "https://solvative.com/wp-content/uploads/2023/08/salesforce-cc.png",
+              "https://solvative.com/wp-content/uploads/2020/06/solvative-preview.png",
             ],
       },
       twitter: {
