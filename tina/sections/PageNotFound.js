@@ -86,9 +86,10 @@ const pageNotFound = {
           </div>
           <div className="col-12 col-md-6 d-flex justify-content-center align-items-center mt-30 mt-md-0">
             <Image
-              src={fields?.errorImage}
+              src="/assets/imgs/template/robo.gif"
               alt="Robot"
-              data-tina-field={tinaField(fields, "errorImage")}
+              unoptimized
+              // data-tina-field={tinaField(fields, "errorImage")}
               width={500}
               height={500}
             />
