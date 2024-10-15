@@ -58,14 +58,20 @@ export async function generateMetadata({ params }, parent) {
     const seoFields = result?.props?.seoFields;
 
     return {
-      title: seoFields?.metaTitle || "default title",
+      title:
+        seoFields?.metaTitle || "Solvative | Human-focused digital solutions.",
       description: seoFields?.metaDescription,
       openGraph: {
         title: seoFields?.ogTitle || seoFields?.metaTitle,
-        description: seoFields?.ogDescription || seoFields?.metaDescription,
-        url: seoFields?.ogUrl,
+        description:
+          seoFields?.ogDescription ||
+          seoFields?.metaDescription ||
+          "Innovative E-Commerce Strategies Drive Efficiency For One of America&#039;s Largest Private Companies",
+        url:
+          seoFields?.ogUrl ||
+          "https://solvative.com/case-studies/commerce-cloud-sfra-migration-for-a-large-consumer-electronics-company/",
         type: seoFields?.ogType || "website", // Default to 'website' if not provided
-        site_name: seoFields?.ogSiteName,
+        site_name: seoFields?.ogSiteName || "Solvative",
         images: seoFields?.ogImage
           ? [
               {
@@ -76,7 +82,9 @@ export async function generateMetadata({ params }, parent) {
               },
               ...previousImages,
             ]
-          : [],
+          : [
+              "https://solvative.com/wp-content/uploads/2023/08/salesforce-cc.png",
+            ],
       },
       twitter: {
         title: seoFields?.twitterTitle || seoFields?.metaTitle,

@@ -6,10 +6,6 @@ import "../public/assets/css/modal.css";
 import "../public/assets/css/swiper-custom.css";
 import ClientLayout from "./client-layout";
 
-export const metadata = {
-  title: "Solvative real",
-  description: "Solvative real is a IT solutions provider",
-};
 
 export default async function RootLayout({ children }) {
   const globalQuery = await client.queries.global({
