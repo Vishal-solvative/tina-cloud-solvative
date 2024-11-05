@@ -4,6 +4,7 @@ import ClientPage from "./client-page";
 
 export const runtime = "edge";
 
+
 // Fetch the data for the page, including SEO fields
 const fetchData = async (slug) => {
   try {
