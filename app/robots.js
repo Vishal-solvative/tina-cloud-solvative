@@ -4,7 +4,6 @@ import {
   FETCH_PAGES,
   FETCH_BLOGS,
 } from "../util/pagesData";
-export const runtime = "edge";
 
 export default async function robots() {
   const baseUrl = "https://solvative.com";

@@ -2,7 +2,6 @@ import TinaComp from "../../components/TinaComp";
 import { client } from "../../tina/__generated__/client";
 import ClientPage from "./client-page";
 
-export const runtime = "edge";
 
 
 // Fetch the data for the page, including SEO fields
