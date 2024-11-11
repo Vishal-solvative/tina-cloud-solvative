@@ -13,7 +13,7 @@ const Footer = ({footer}) => {
                     <div className='footer-top'>
                         <div className='row'>
                             <div className='col-md-4 col-sm-6 text-center text-md-start d-flex align-items-center'>
-                                <Link href='/' onClick={() => updateActivePage('/')}>
+                                <Link href='/home' onClick={() => updateActivePage('/home')}>
                                     <img src='/solvative-logo.svg' alt='Solvative' />
                                 </Link>
                             </div>

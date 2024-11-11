@@ -1,5 +1,4 @@
 'use client'
-
 import '../public/assets/css/style.css'
 import '../public/assets/css/modal.css'
 import '../public/assets/css/swiper-custom.css'

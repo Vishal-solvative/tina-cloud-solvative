@@ -7,6 +7,7 @@ import "../public/assets/css/swiper-custom.css";
 import ClientLayout from "./client-layout";
 
 
+
 export default async function RootLayout({ children }) {
   const globalQuery = await client.queries.global({
     relativePath: "global.mdx",

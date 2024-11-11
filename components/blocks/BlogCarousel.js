@@ -1,10 +1,11 @@
+'use client'
 import {tinaField} from 'tinacms/dist/react'
 import {TinaMarkdown} from 'tinacms/dist/rich-text'
 import SwiperCore, {Autoplay, Navigation} from 'swiper'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import Link from 'next/link'
-import {formatDate} from '../../util/date'
 import {useActivePage} from '../../hooks/useActivePage'
+import {FormatDate} from '../../util/date'
 
 SwiperCore.use([Autoplay, Navigation])
 export const BlogCarousel = ({data}) => {
@@ -126,7 +127,7 @@ export const BlogCarousel = ({data}) => {
                                                                     className='text-body-small color-gray-500'
                                                                     data-tina-field={tinaField(card?.blog, 'blogDate')}
                                                                 >
-                                                                    {formatDate(card?.blog?.blogDate)}
+                                                                    <FormatDate dateString={card?.blog?.blogDate} />
                                                                 </p>
                                                             </div>
                                                         </div>

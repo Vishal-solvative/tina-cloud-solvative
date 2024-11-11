@@ -12,6 +12,7 @@ const Blogs = {
     },
     format: 'mdx',
     fields: [
+        seoFields,
         {
             type: 'boolean',
             name: 'isHeaderVisible',
@@ -193,8 +194,7 @@ const Blogs = {
                 }
             ],
             isBody: true
-        },
-        seoFields
+        }
     ]
 }
 

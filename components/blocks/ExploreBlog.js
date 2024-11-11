@@ -2,8 +2,8 @@
 
 import {tinaField} from 'tinacms/dist/react'
 import Link from 'next/link'
-import {formatDate} from '../../util/date'
 import {useActivePage} from '../../hooks/useActivePage'
+import {FormatDate} from '../../util/date'
 
 export const ExploreBlog = ({data}) => {
     const {activePage, updateActivePage} = useActivePage()
@@ -78,7 +78,7 @@ export const ExploreBlog = ({data}) => {
                                         className='text-body-small color-gray-500'
                                         data-tina-field={tinaField(primary?.blog, 'blogDate')}
                                     >
-                                        {formatDate(primary?.blog?.blogDate)}
+                                        <FormatDate dateString={primary?.blog?.blogDate} />
                                     </p>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ export const ExploreBlog = ({data}) => {
                                         className='text-body-small color-gray-500'
                                         data-tina-field={tinaField(secondary?.blog, 'blogDate')}
                                     >
-                                        {formatDate(secondary?.blog?.blogDate)}
+                                        <FormatDate dateString={secondary?.blog?.blogDate} />
                                     </p>
                                 </div>
                                 <div className={`style-1-img ${secondary?.blog?.bgcolor} `}>

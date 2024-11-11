@@ -50,6 +50,11 @@ const seoFields = {
         },
         {
             type: 'string',
+            name: 'ogImageAlt',
+            label: 'Open Graph Image Alt'
+        },
+        {
+            type: 'string',
             name: 'ogUrl',
             label: 'Open Graph URL'
         },

@@ -2,6 +2,7 @@ import React from 'react'
 import client from '../../../tina/__generated__/client'
 import BlogClientPage from './client-page'
 
+
 export default async function BlogPage({params}) {
     const data = await client.queries.blogs({
         relativePath: `${params.slug}.mdx`

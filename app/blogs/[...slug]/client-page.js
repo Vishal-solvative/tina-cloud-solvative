@@ -130,6 +130,9 @@ export default function BlogClientPage(props) {
                                     img: props => (
                                         <img className='img-responsive bdr-16 main-img' src={props?.url} {...props} />
                                     ),
+                                    ul: props => <ul className='para-ul' {...props} />,
+                                    ol: props => <ol className='para-ol' {...props} />,
+                                    li: props => <li className='para-li' {...props} />,
                                     h2: props => <h2 className='text-heading-3' {...props} />,
                                     sideImage: props => <SideImageComponent props={props} />,
                                     h3: props => <h3 className='text-heading-4' {...props} />

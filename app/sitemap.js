@@ -1,5 +1,6 @@
 import {fetchPages, fetchBlogPages, FETCH_PAGES, FETCH_BLOGS} from '../util/pagesData'
 
+
 export default async function sitemap() {
     const pageData = await FETCH_PAGES()
     const blogsData = await FETCH_BLOGS()

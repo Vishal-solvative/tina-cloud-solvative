@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 import Link from 'next/link'
 import {useState, useEffect} from 'react'
@@ -11,7 +10,9 @@ const Header = ({header, headerStyle = false, handleOpen}) => {
     const {activePage, updateActivePage} = useActivePage()
 
     useEffect(() => {
-        updateActivePage(window.location.pathname)
+        if (window.location.pathname !== '/') {
+            updateActivePage(window.location.pathname)
+        }
     }, [])
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const Header = ({header, headerStyle = false, handleOpen}) => {
                     <div className='main-header'>
                         <div className='header-left'>
                             <div className='header-logo'>
-                                <Link className='d-flex' href='/' onClick={() => updateActivePage('/')}>
+                                <Link className='d-flex' href='/home' onClick={() => updateActivePage('/home')}>
                                     <img alt='Solvative' src='/solvative-logo.svg' />
                                 </Link>
                             </div>
